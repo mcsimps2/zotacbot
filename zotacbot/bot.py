@@ -1,5 +1,6 @@
 import os
 import time
+import webbrowser
 from threading import Thread
 
 from requests import RequestException
@@ -54,6 +55,7 @@ class ZotacBot(Thread):
             self.session, self.search_page, self.products
         )
         checkout_url = try_until_success(zotac.checkout)(self.session)
+        webbrowser.open_new(checkout_url)
         while True:
             print(checkout_url)
             alert("CHECKOUT LINK GENERATED")
