@@ -7,6 +7,7 @@ from requests import RequestException
 from . import zotac
 from .client import Client
 from .stock import fetch_num_in_stock
+from .util import alert
 
 
 RETRY_WAIT = 0.25
@@ -55,7 +56,7 @@ class ZotacBot(Thread):
         checkout_url = try_until_success(zotac.checkout)(self.session)
         while True:
             print(checkout_url)
-            os.system("say CHECKOUT LINK GENERATED")
+            alert("CHECKOUT LINK GENERATED")
             time.sleep(1)
 
 
@@ -70,13 +71,13 @@ class StockBot(Thread):
             if num_in_stock:
                 print(f"FOUND {num_in_stock} IN STOCK")
                 while True:
-                    os.system("say GRAPHICS CARD IN STOCK")
+                    alert("GRAPHICS CARD IN STOCK")
                     time.sleep(0.5)
             else:
                 print("Nothing in stock")
         except RequestException as e:
             print(e)
-            os.system("say Webpage under heavy load, possible incoming stock")
+            alert("Webpage under heavy load, possible incoming stock")
         except Exception as e:
             print(e)
 
@@ -84,4 +85,3 @@ class StockBot(Thread):
         while True:
             self.run_job()
             time.sleep(self.poll)
-
