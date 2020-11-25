@@ -51,11 +51,17 @@ python main.py
 
 Use `Ctrl + C` to stop the program from running - you may have to do this several times.
 
+
 ## How the bot works
 The bot will start by logging in.
+
 It will then clear your basket to make sure it is empty.
+
 Afterwards, it will keep trying to add graphics cards to the basket.  It will usually stay in this state until graphics card stock is added.  You will probably see print statements saying "No add to cart links found" for a while.  When an "Add to Cart" link finally becomes available, you will receive sound alerts, so make sure your volume is on.
-The bot will then generate a PayPal link for you to checkout.  Copy/paste the link in your browser.
+
+The bot will then generate a PayPal link for you to checkout and open the link in your browser.
+
+*Important:* Make sure you are logged in with your browser to the Zotac page while the bot is running.  The reaso is that, once you complete PayPal checkout, it will redirect you back to the Zotac website with a success token in the URL that needs to be registered with Zotac for the process to complete (i.e. so Zotac knows you completed the PayPal process).  If you aren't logged in, this redirect may fail.
 
 ## Troubleshooting
 The Zotac website often crashes during re-stocks.  In these scenarious, the bot will continue to retry operations.
