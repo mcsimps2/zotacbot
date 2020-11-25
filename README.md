@@ -61,7 +61,7 @@ Afterwards, it will keep trying to add graphics cards to the basket.  It will us
 
 The bot will then generate a PayPal link for you to checkout and open the link in your browser.
 
-*Important:* Make sure you are logged in with your browser to the Zotac page while the bot is running.  The reaso is that, once you complete PayPal checkout, it will redirect you back to the Zotac website with a success token in the URL that needs to be registered with Zotac for the process to complete (i.e. so Zotac knows you completed the PayPal process).  If you aren't logged in, this redirect may fail.
+*Important:* Make sure you are logged in with your browser to the Zotac page while the bot is running.  The reason for this is that, once you complete PayPal checkout, it will redirect you back to the Zotac website with a success token in the URL that needs to be registered with Zotac for the process to complete (i.e. so Zotac knows you completed the PayPal process).  If you aren't logged in, this redirect may fail.  Try to copy the URL during this redirect so you can retry the operation if Zotac fails to load.
 
 ## Troubleshooting
 The Zotac website often crashes during re-stocks.  In these scenarious, the bot will continue to retry operations.
