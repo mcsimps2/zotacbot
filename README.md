@@ -1,4 +1,11 @@
 # zotacbot
+## DEFUNCT
+This repo is now defunct. Zotac updated its website to use a CloudFlare JavaScript challenge snippet. The underlying `requests` library doesn't process JavaScript, so CloudFlare detects the bot and returns with a 503 status when you attempt to access the Zotac website. My recommendation would be to use Selenium or another Firefox/Chrome driver which you can control programmatically. This will allow you to process JavaScript, as well as to deal with CSRF tokens and the like automatically.
+
+The CloudFlare challenge identifier is `/cdn-cgi/challenge-platform/h/g/orchestrate/jsch/v1`.
+
+[Read more about the CloudFlare challenge on this repo.](https://github.com/scaredos/cfresearch)
+
 ## Installation
 Make sure you have Python3 installed.  Clone the repo.
 ```
